@@ -4,11 +4,13 @@ Style zaimportowane do komponentów, zostaną pobrane przez aplikację DOPIERO w
 Kiedy już zostaną pobrane przez aplikację, będą one dostępne globalnie dla każdego komponentu (mimo, że w kodzie zostały zaimportowane tylko w jednym komponencie). Nie jest to często porządany efekt, poneważ moze dochodzić do nadpisywania (np. w przypadku tych samych nazw klas).
 */
 
-export const Contact = (props) => {
+export const Contact = ({ contact: { phone, address, email } }) => {
   // destukturyzacja props
-  const {
+  /* const {
     contact: { phone, address, email },
   } = props;
+  */
+
   // style
   const tittleStyle = {
     color: "orange",
