@@ -6,7 +6,9 @@ Kiedy już zostaną pobrane przez aplikację, będą one dostępne globalnie dla
 
 export const Contact = (props) => {
   // destukturyzacja props
-  const { contact } = props;
+  const {
+    contact: { phone, address, email },
+  } = props;
   // style
   const tittleStyle = {
     color: "orange",
@@ -16,18 +18,18 @@ export const Contact = (props) => {
     <>
       <div>
         <h5 style={tittleStyle}>Tel</h5>
-        <h6 style={{ color: "red", fontWeight: "normal" }}>{contact.phone}</h6>
+        <h6 style={{ color: "red", fontWeight: "normal" }}>{phone}</h6>
       </div>
       <div>
         <h5 className="title">Adres</h5>
         <h6>
-          ul. {contact.address.street} {contact.address.number}
+          ul. {address.street} {address.number}
         </h6>
-        <h6>{contact.address.city}</h6>
+        <h6>{address.city}</h6>
       </div>
       <div>
         <h5 className="title">Email</h5>
-        <h6>{contact.email}</h6>
+        <h6>{email}</h6>
       </div>
     </>
   );
