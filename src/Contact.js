@@ -16,8 +16,15 @@ export const Contact = ({ contact: { phone, address, email } }) => {
     color: "orange",
     fontSize: "20px",
   };
+
+  const handleOnClick = () => {
+    alert(
+      `Dziękuję! Zapraszam do mnie: ${address.city}, ulica ${address.street}, ${address.number}`
+    );
+  };
+
   return (
-    <>
+    <div className="contact-container">
       <div>
         <h5 style={tittleStyle}>Tel</h5>
         <h6 style={{ color: "red", fontWeight: "normal" }}>{phone}</h6>
@@ -33,6 +40,7 @@ export const Contact = ({ contact: { phone, address, email } }) => {
         <h5 className="title">Email</h5>
         <h6>{email}</h6>
       </div>
-    </>
+      <button onClick={handleOnClick}>Wyślij</button>
+    </div>
   );
 };
