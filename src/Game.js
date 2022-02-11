@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 /*
@@ -40,6 +40,16 @@ export const Game = (props) => {
 
   const addPoints = () => setPoints(points + 5);
   const removePoints = () => setPoints(points - 5);
+
+  useEffect(() => {
+    if (points >= 50) {
+      alert(`Gratulacje! Wygrałeś w grę ${props.gameName}!`);
+      setPoints(0);
+    } else if (points < -50) {
+      alert(`Przegrałeś w grę ${props.gameName}`);
+      setPoints(0);
+    }
+  });
 
   return (
     <>
