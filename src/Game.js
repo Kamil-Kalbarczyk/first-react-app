@@ -1,8 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
 
+/*
+Wykorzystanie styled components z dynamicznym pytaniem o wartość, nie jest takie oczywiste.
+Należy posłuzyć się propsem, który będzie reagował na zmianę wartości.
+tutaj poslużyliśmy się propsem score, któremu później w JSX przypisujemy wartość z points z useState.
+ */
 const Score = styled.span`
-  color: ${(props) => (props.points > 0 ? "yellowgreen" : "pink")};
+  color: ${(props) => (props.score > 0 ? "yellowgreen" : "pink")};
 `;
 
 const ButtonContainer = styled.div`
@@ -42,7 +47,8 @@ export const Game = (props) => {
       <h4>
         Troja liczpa punktów to:{" "}
         {/* <span style={{ color: points > 0 ? "green" : "red" }}>{points}</span> */}
-        <Score points={points}>{points}</Score>
+        {/* Poniżej przypisanie do propsa score, wartości points ze stanu lokalnego. Powyżej to samo, tylko zapisane w stylach liniowych */}
+        <Score score={points}>{points}</Score>
       </h4>
       <h6>Add or remove points</h6>
       <ButtonContainer>
