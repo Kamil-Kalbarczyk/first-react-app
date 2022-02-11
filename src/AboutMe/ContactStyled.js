@@ -10,6 +10,11 @@ export const ContactStyled = ({ contact: { phone, address, email } }) => {
     justify-content: center;
     background-color: palevioletred;
     color: white;
+    width: 80%;
+    &:hover {
+      background-color: red;
+      color: black;
+    }
   `;
 
   const TittleStyle = styled.h5`
