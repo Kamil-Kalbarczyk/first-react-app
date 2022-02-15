@@ -4,6 +4,7 @@ import { Game } from "./games/Game";
 import {GameClass} from './games/GameClass'
 import {Users} from './Users'
 import {MyForm} from './MyForm'
+import {MyBoostedForm} from './MyBoostedForm'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <GameClass gameName='Tetrisso'/>
       <Users />
       <MyForm />
+      <MyBoostedForm />
     </Wrapper>
   );
 }
