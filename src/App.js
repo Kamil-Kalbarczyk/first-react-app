@@ -1,6 +1,7 @@
 import { Wrapper } from "./Wrapper";
 import { AboutMe } from "./AboutMe/AboutMe";
-import { Game } from "./Game";
+import { Game } from "./games/Game";
+import {GameClass} from './games/GameClass'
 import {Users} from './Users'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Wrapper>
       <AboutMe />
       <Game gameName="Marioo" />
+      <GameClass gameName='Tetrisso'/>
       <Users />
     </Wrapper>
   );

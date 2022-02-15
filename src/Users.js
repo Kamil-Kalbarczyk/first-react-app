@@ -34,7 +34,11 @@ export const Users = () => {
             <h3>Users</h3>
             <ul>
                 {users.map((user) => (
-                    <User key={user.id} name={user.name} surname={user.surname} companyName={user.company.name} phone ={user.phone}/>
+                    <User key={user.id}
+                    name={user.name}
+                    surname={user.surname}
+                    companyName={user.company.name}
+                    phone ={user.phone}/>
                 ))}
             </ul>
             </>
