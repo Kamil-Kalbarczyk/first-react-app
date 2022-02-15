@@ -12,40 +12,39 @@ margin-bottom: 30px;
 
 export const MyForm = () => {
 
-    // const [form, getForm] = useState({
-    //     name: '',
-    //     age: '',
-    //     gender: '',
-    //     comment: '',
-    // });
+    const [data, setData] = useState({
+        name: '',
+        age: '',
+        gender: '',
+        comment: '',
+    });
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const [gender, setGender] = useState('');
-    const [comment, setComment] = useState('');
+    const {name, age, gender, comment } = data;
 
-    const handleNameChange = (event) => setName(event.target.value);
-    const handleAgeChange = (event) => setAge(event.target.value);
-    const handleGenderChange = (event) => setGender(event.target.value);
-    const handleCommentChange = (event) => setComment(event.target.value);
-
-    const handleChange = (e) => {
-        e.preventDefault();
-        alert(`Wysłano dane ${name}, ${age}, ${gender}, ${comment}.`)
+    const handleChange = (event) => {
+        setData({
+            ...data,
+            [event.target.name]: event.target.value
+        });
     }
 
-    return <Form onSubmit={handleChange}>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`Wysłano dane ${JSON.stringify(data, null, 2)}`)
+    }
+
+    return <Form onSubmit={handleSubmit}>
             <label htmlFor='name'>Imię</label>
-            <input id='name' type='text' value={name} onChange={handleNameChange}/>
+            <input name='name' id='name' type='text' value={name} onChange={handleChange}/>
             <label htmlFor= 'age'>Wiek</label>
-            <input id='age' type='number' value={age} onChange={handleAgeChange}/>
+            <input name='age' id='age' type='number' value={age} onChange={handleChange}/>
             <label htmlFor='gender'>płeć</label>
-            <select id='gender' value={gender} onChange={handleGenderChange}>
+            <select name='gender' id='gender' value={gender} onChange={handleChange}>
                 <option>Kobieta</option>
                 <option>Mężczyzna</option>
             </select>
             <label htmlFor='comment'>Komentarz</label>
-            <textarea id='comment' value={comment} onChange={handleCommentChange}/>
+            <textarea name='comment' id='comment' value={comment} onChange={handleChange}/>
             <button>Wyślij</button>
     </Form>
 }
