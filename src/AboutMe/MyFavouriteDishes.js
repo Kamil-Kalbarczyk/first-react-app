@@ -1,3 +1,5 @@
+import {Typography, List, ListItem} from '@mui/material';
+
 export const MyFavouriteDishes = ({ dishes }) => {
   //   const dishes = [
   //     { id: 1, dish: "burger" },
@@ -6,12 +8,12 @@ export const MyFavouriteDishes = ({ dishes }) => {
   //   ];
   return (
     <>
-      <h2>My Favourite Dishes:</h2>
-      <ul>
+      <Typography variant='h3'>My Favourite Dishes:</Typography>
+      <List>
         {dishes.map((dish) => (
-          <li key={dish.id}>{dish.dish}</li>
+          <ListItem key={dish.id}>{dish.dish}</ListItem>
         ))}
-      </ul>
+      </List>
     </>
   );
 };

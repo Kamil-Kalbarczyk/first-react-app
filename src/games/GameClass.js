@@ -1,31 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 
-
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 10%;
-  margin-bottom: 100px;
-`;
-
-const Button = styled.button`
-  height: 40px;
-  width: 120px;
-  font-size: 20px;
-  color: black;
-  border: none;
-  border-radius: 4%;
-  color: white;
-  cursor: pointer;
-`;
-
-const AddButton = styled(Button)`
-  background-color: green;
-`;
-
-const RemoveButton = styled(Button)`
-  background-color: red;
-`;
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
+import {Icon} from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 export class GameClass extends React.Component {
 
@@ -53,16 +32,16 @@ export class GameClass extends React.Component {
 
     render () {
       return  <>
-        <h2>Witamy w grze {this.props.gameName}</h2>
-        <h4>
+        <Typography variant='h4'>Witamy w grze {this.props.gameName}</Typography>
+        <Typography variant='h6'>
           Troja liczpa punktów to:{" "}
           <span style={{ color: this.state.points > 0 ? "green" : "red" }}>{this.state.points}</span>
-        </h4>
-        <h6>Add or remove points</h6>
-        <ButtonContainer>
-          <AddButton onClick={this.addPoints}>Add</AddButton>
-          <RemoveButton onClick={this.removePoints}>Remove</RemoveButton>
-        </ButtonContainer>
+        </Typography>
+        <Typography>Add or remove points</Typography>
+        <ButtonGroup disableElevation variant="contained">
+          <Button variant='contained' color='success' onClick={this.addPoints}><Icon>add</Icon></Button>
+          <Button variant='contained' color='error' onClick={this.removePoints}><Icon>remove</Icon></Button>
+        </ButtonGroup>
       </>
     }
 }
