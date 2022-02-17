@@ -5,10 +5,12 @@ import {GameClass} from './games/GameClass'
 import {Users} from './Users'
 import {MyForm} from './MyForm'
 import {MyBoostedForm} from './MyBoostedForm'
+import {Navigation} from './navigation/Navigation'
 
 function App() {
   return (
     <Wrapper>
+      <Navigation />
       <AboutMe />
       <Game gameName="Marioo" />
       <GameClass gameName='Tetrisso'/>
