@@ -1,10 +1,10 @@
-import { Wrapper } from "./Wrapper";
+import { Wrapper } from "./common/Wrapper";
 import { AboutMe } from "./AboutMe/AboutMe";
 import { Game } from "./games/Game";
 import {GameClass} from './games/GameClass'
-import {Users} from './Users'
-import {MyForm} from './MyForm'
-import {MyBoostedForm} from './MyBoostedForm'
+import {Users} from './users/Users'
+import {MyForm} from './forms/MyForm'
+import {MyBoostedForm} from './forms/MyBoostedForm'
 import {Navigation} from './navigation/Navigation'
 
 function App() {
