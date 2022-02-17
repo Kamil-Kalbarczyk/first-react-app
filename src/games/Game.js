@@ -1,38 +1,13 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-/*
-Wykorzystanie styled components z dynamicznym pytaniem o wartość, nie jest takie oczywiste.
-Należy posłuzyć się propsem, który będzie reagował na zmianę wartości.
-tutaj poslużyliśmy się propsem score, któremu później w JSX przypisujemy wartość z points z useState.
- */
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+
 const Score = styled.span`
   color: ${(props) => (props.score > 0 ? "yellowgreen" : "pink")};
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 10%;
-  margin-bottom: 100px;
-`;
-
-const Button = styled.button`
-  height: 40px;
-  width: 120px;
-  font-size: 20px;
-  color: black;
-  border: none;
-  border-radius: 4%;
-  color: white;
-  cursor: pointer;
-`;
-
-const AddButton = styled(Button)`
-  background-color: green;
-`;
-
-const RemoveButton = styled(Button)`
-  background-color: red;
 `;
 
 export const Game = (props) => {
@@ -61,10 +36,10 @@ export const Game = (props) => {
         <Score score={points}>{points}</Score>
       </h4>
       <h6>Add or remove points</h6>
-      <ButtonContainer>
-        <AddButton onClick={addPoints}>Add</AddButton>
-        <RemoveButton onClick={removePoints}>Remove</RemoveButton>
-      </ButtonContainer>
+      <Stack spacing={2} direction="row">
+        <Button /* sx={{backgroundColor: 'green'}} */ color='success' variant="contained" onClick={addPoints}><AddIcon /></Button>
+        <Button /* sx={{backgroundColor: 'red'}} */ color='error'  variant="contained" onClick={removePoints}><RemoveIcon /></Button>
+      </Stack>
     </>
   );
 };
