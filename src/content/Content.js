@@ -35,7 +35,7 @@ export const Content = () => {
             </>
           }
         />
-        <Route path="/users/:username" element={<UserDetails />} />
+        <Route path="/users/:id" element={<UserDetails />} />
       </Routes>
     </>
   );
