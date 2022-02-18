@@ -3,6 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import {Link, NavLink} from 'react-router-dom'
 
 export const Navigation = () => {
   
@@ -20,23 +21,24 @@ export const Navigation = () => {
           </Typography>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Home
+              ><Link to='/'>Home</Link>
               </Button>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >About me
+              >
+                <Link to='/about'>About me</Link>
               </Button>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Games
+              ><Link to='/games'>Games</Link>
               </Button>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Forms
+              ><Link to='/forms'>Forms</Link>
               </Button>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >Users
+              ><Link to='/users'>Users</Link>
               </Button>
         </Toolbar>
       </Container>
