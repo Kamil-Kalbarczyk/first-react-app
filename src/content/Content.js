@@ -7,6 +7,7 @@ import { MyBoostedForm } from "../forms/MyBoostedForm";
 import { Hello } from "../common/Hello";
 import { Sign } from "../Sign/Sign";
 import { Routes, Route } from "react-router-dom";
+import { UserDetails } from "../users/UserDetails";
 
 export const Content = () => {
   return (
@@ -34,6 +35,7 @@ export const Content = () => {
             </>
           }
         />
+        <Route path="/users/:username" element={<UserDetails />} />
       </Routes>
     </>
   );
