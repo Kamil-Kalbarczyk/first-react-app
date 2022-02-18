@@ -78,6 +78,14 @@ export const Navigation = () => {
           >
             Users
           </Button>
+          <Button
+            sx={{ my: 2, color: "white", display: "block" }}
+            component={NavLink}
+            to="/sign"
+            style={({ isActive }) => (isActive ? activeButton : undefined)}
+          >
+            Sign
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

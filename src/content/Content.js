@@ -5,12 +5,14 @@ import { Users } from "../users/Users";
 import { MyForm } from "../forms/MyForm";
 import { MyBoostedForm } from "../forms/MyBoostedForm";
 import { Hello } from "../common/Hello";
+import { Sign } from "../Sign/Sign";
 import { Routes, Route } from "react-router-dom";
 
 export const Content = () => {
   return (
     <>
       <Routes>
+        <Route path="/sign" element={<Sign />} />
         <Route path="/" element={<Hello />} />
         <Route path="/about" element={<AboutMe />} />
         <Route
